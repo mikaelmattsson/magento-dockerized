@@ -1,0 +1,24 @@
+app/etc/local.xml
+var/*
+
+# Downloader
+downloader/cache.cfg
+downloader/connect.cfg
+downloader/.cache
+
+# Media
+media/*/*
+!media/*/.htaccess
+!media/*/README.md
+!media/.htaccess
+!public/media/images/downloads/*
+
+# Development
+/vendor/
+**/.sass-cache/
+*.css.map
+/errors/local.xml
+
+# Compilation
+includes/src
+
