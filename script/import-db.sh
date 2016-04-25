@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker exec -i magentodockerized_mysql_1 mysql -uroot -pchange_me2 project < ./db/db.sql
+docker exec -i $(echo $(basename "$PWD") | sed 's/[^A-Za-z0-9]//g')_mysql_1 mysql -uroot -pyg789u0ijhvtr678ygtr678yh6f8787 project < ./db/db.sql
