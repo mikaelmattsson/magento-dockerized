@@ -1,4 +1,6 @@
 version: '2'
 services:
   php:
-    build: docker/php-prod
+    build: docker/php-dev
+  environment:
+    MAGE_IS_DEVELOPER_MODE: true
