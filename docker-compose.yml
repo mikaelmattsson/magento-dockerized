@@ -1,14 +1,13 @@
 version: '2'
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:1.10
     ports:
-      - 8001:80
-      - 4431:443
+      - 8888:80
+      - 4444:443
     links:
       - php
     volumes:
-      - ./logs/nginx:/var/log/nginx
       - ./docker/nginx/conf.d:/etc/nginx/conf.d
     volumes_from:
       - php:ro
@@ -23,12 +22,12 @@ services:
     volumes:
       - ./public:/var/www/html
   mysql:
-    image: mysql:5.7.12
+    image: mysql:5.7
     environment:
       MYSQL_DATABASE: project
       MYSQL_USER: magento
-      MYSQL_PASSWORD: h78049hgr789fjpw3f7h8hyh8y4f
-      MYSQL_ROOT_PASSWORD: yg789u0ijhvtr678ygtr678yh6f8787
+      MYSQL_PASSWORD: 'h78049hgr789fjpw3f7h8hyh8y4f'
+      MYSQL_ROOT_PASSWORD: 'yg789u0ijhvtr678ygtr678yh6f8787'
     command: "/run/run.sh" # remove if you dont want to mount db data
     volumes:
       - ./data/db/mysql:/var/lib/mysql:rw # remove if you dont want to mount db data

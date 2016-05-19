@@ -1,3 +1,4 @@
 /data
 /logs
+/db
 /docker-compose.override.yml

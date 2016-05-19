@@ -2,5 +2,8 @@ version: '2'
 services:
   php:
     build: docker/php-dev
-  environment:
-    MAGE_IS_DEVELOPER_MODE: true
+    environment:
+      MAGE_IS_DEVELOPER_MODE: 1
+  nginx:
+    volumes:
+      - ./logs/nginx:/var/log/nginx

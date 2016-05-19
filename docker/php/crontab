@@ -1,0 +1,2 @@
+* * * * * www-data /bin/sh /var/www/html/cron.sh cron.php -m=default
+* * * * * www-data /bin/sh /var/www/html/cron.sh cron.php -m=always

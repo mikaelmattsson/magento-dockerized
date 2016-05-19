@@ -44,3 +44,14 @@ RUN curl -o magerun https://raw.githubusercontent.com/netz98/n98-magerun/master/
     rm ./magerun && \
     apt-get update && \
     apt-get install -qy mysql-client
+
+# Install Cron
+RUN apt-get update -qq && apt-get install -qqy php5-cli cron
+
+# Add crontab file in the cron directory
+ADD crontab /etc/cron.d/project-cron
+
+# Give execution rights on the cron job
+RUN chmod 0644 /etc/cron.d/project-cron
+
+CMD cron && php-fpm
